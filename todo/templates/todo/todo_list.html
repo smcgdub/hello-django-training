@@ -18,11 +18,35 @@
         {% else %}
           <td>{{ item.name }}</td>
         {% endif%}
+        <!-- Toggle button -->
+        <td>
+          <a href="/toggle/{{ item.id }}">
+            <button>Toggle</button>
+          </a>
+        </td>
+        <!-- Edit button -->
+        <td>
+          <a href="/edit/{{ item.id }}">
+            <button>Edit</button>
+          </a>
+        </td>
+        <!-- Delete button -->
+        <td>
+          <a href="/delete/{{ item.id }}">
+            <button>Delete</button>
+          </a>
+        </td>
       </tr>
+      <!-- If no items in todo list -->
       {% empty %}
-      <tr><td>You have nothing to do</td></tr>
+      <tr><td>You have no items to do</td></tr>
     {% endfor %}
   </table>
+  <!-- Add item button -->
+  <button>
+    <a href="/add" style="text-decoration: none;">Add an item</a>
+  </button>
+  <!-- <a href="/add">Add an item</a> -->
 </body>
 
 </html>
